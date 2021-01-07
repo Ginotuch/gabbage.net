@@ -13,7 +13,8 @@ const html = () =>
     .pipe(
       htmlmin({
         collapseWhitespace: true,
-        removeOptionalTags: true,
+        removeOptionalTags: false,
+        removeComments: false,
         collapseBooleanAttributes: true,
       })
     )
