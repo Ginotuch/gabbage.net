@@ -1,19 +1,10 @@
 * {
   margin: 0;
-  --tc: #111;
-  --bc: #fff;
+  --tc: #fff;
+  --bc: #111;
   --hc: #22b14d;
-  --cc: #e2e2e2;
-  --cb: #a5a5a5;
-}
-
-@media (prefers-color-scheme: dark) {
-  * {
-    --tc: #fff;
-    --bc: #111;
-    --cc: #313131;
-    --cb:#ddd;
-  }
+  --cc: #313131;
+  --cb:#ddd;
 }
 
 body {
