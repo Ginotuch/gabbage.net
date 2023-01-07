@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blue Teleport Decoder</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"] {
+            font-size: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            font-size: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 1.5rem;
+
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<form>
+    Enter the sign's coordinates: <input type="text" id="coords"><br>
+    <input type="submit" value="Submit">
+</form>
+<div id="result"></div>
+
+<script>
+  const form = document.querySelector('form');
+  const result = document.querySelector('#result');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const coords = document.querySelector('#coords')
+      .value
+      .trim()
+      .replace("(", "")
+      .replace(")", "")
+      .split(":");
+
+    if (coords[0].length > 4) {
+      result.innerHTML = `Decoded coordinates:
+X: ${parseInt(coords[0], 16) - parseInt("7d000", 16)}
+Y: ${parseInt(coords[1], 16)}
+Z: ${parseInt(coords[2], 16) - parseInt("7d000", 16)}`;
+    } else {
+      result.innerHTML = `Decoded coordinates:
+X: ${parseInt(coords[0], 16) - parseInt("7d00", 16)}
+Y: ${parseInt(coords[1], 16) - parseInt("7d00", 16)}
+Z: ${parseInt(coords[2], 16) - parseInt("7d00", 16)}`;
+    }
+  });
+</script>
+
+</body>
+</html>
