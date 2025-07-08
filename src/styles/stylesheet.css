@@ -87,3 +87,15 @@ h1 {
 nav a {
   margin-left: 0.75em;
 }
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: var(--tc);
+}
+
+footer p {
+  margin: 0;
+}
